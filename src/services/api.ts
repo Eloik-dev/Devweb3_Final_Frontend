@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:3000";
+import EnvUtils from "@/utils/envUtils";
+
+const API_URL = EnvUtils.getApiUrl();
 
 export interface Stock {
   _id: string;
@@ -14,6 +16,7 @@ export interface Stock {
 
 export const stockApi = {
   async getAll(): Promise<Stock[]> {
+    console.log("API_URL:", API_URL); // Debug log to check the API URL being used
     const response = await fetch(`${API_URL}/api/stock/all`);
     if (!response.ok) {
       throw new Error("Erreur lors de la récupération des stocks");

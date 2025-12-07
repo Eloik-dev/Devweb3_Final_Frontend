@@ -1,3 +1,4 @@
+import EnvUtils from "@/utils/envUtils";
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
 
 interface User {
@@ -25,7 +26,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = EnvUtils.getApiUrl();
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
