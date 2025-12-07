@@ -5,7 +5,7 @@ import Layout from "./components/layout/Layout";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Portfolio from "./pages/Portfolio";
+import PortfolioPage from "./pages/PortfolioPage";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
-            <Route path="portfolio" element={<Portfolio />} />
+            <Route path="portfolio" element={<PortfolioPage />} />
           </Route>
         </Routes>
       </StockProvider>
